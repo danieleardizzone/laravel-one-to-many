@@ -15,6 +15,15 @@
                 <label for="content" class="form-label">Contenuto</label>
                 <input type="text" class="form-control" id="content" name="content">
             </div>
+            <div class="mb-3">
+                <label for="type_id" class="form-label">Categories</label>
+                <select name="type_id" class="form-control" id="type_id">
+                  <option value="">Seleziona una categoria</option>
+                  @foreach($types as $type)
+                    <option @selected( old('type_id') == $type->id ) value="{{ $type->id }}">{{ $type->name }}</option>
+                  @endforeach
+                </select>
+            </div>
             <button class="btn btn-primary" type="submit">Crea</button>
         </form>
 

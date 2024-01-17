@@ -23,7 +23,7 @@ class UpdateProjectRequest extends FormRequest
     {
         return [
             'slug'=>'max:200|min:3|unique:projects,slug',
-            'category_id' => 'nullable|exists:categories,id',
+            'type_id' => 'nullable|exists:types,id',
             'content'=>'required|max:255|min:3'
         ];
     }
